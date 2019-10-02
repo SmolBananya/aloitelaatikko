@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aloitelista{% endblock %}
+
+ {% block body %}
+
+    <h1>Aloitteen tiedot</h1>
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Aihe</th>
+        <th>Kuvaus</th>
+        <th>Etunimi</th>
+        <th>Sukunimi</th>
+        <th>Kirjauspäivä</th>
+        <th>Toiminnot</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th>{{ aloite.id }}</th>
+        <td>{{ aloite.aihe }}</td>
+        <td>{{ aloite.kuvaus }}</td>
+        <td>{{ aloite.etunimi }}</td>
+        <td>{{ aloite.sukuniki }}</td>
+        <td>{{ aloite.email }}</td>
+        <td>{{ aloite.kirjauspaiva | date('d-m-Y') }}</td>
+
+        <td>
+            <a href="{{ path('aloite_muokkaa', {id: aloite.id}) }}" class="btn btn-success">Muokkaa</a>
+            <button href="{{ path('aloite_poista', {id: aloite.id}) }}" class="btn btn-danger">Poista</button>
+        </td>
+        </tr>               
+    </tbody>    
+</table> 
+ 
+ {% endblock %}
+
+ {% block javascripts %}
+    {{ parent() }}
+    <script src="js/main.js"></script>
+{% endblock %}
