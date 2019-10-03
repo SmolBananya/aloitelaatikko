@@ -31,7 +31,7 @@ class AloiteController extends AbstractController
      * @Route( "/aloite/uusi", name="aloite_uusi")
      */
     public function uusi(Request $request){
-        // Luodaan linkki-olio
+        // Luodaan aloite-olio
         $aloite = new Aloitetaulu();
   
         // Luodaan lomake
