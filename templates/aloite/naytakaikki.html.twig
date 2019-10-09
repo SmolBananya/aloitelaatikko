@@ -28,8 +28,8 @@
         <td>{{ aloite.kirjauspaiva | date('d-m-Y') }}</td>
 
         <td>
-            <a href="{{ path('aloite_muokkaa', {id: aloite.id}) }}" class="btn btn-success">Muokkaa</a>
-            <button href="{{ path('aloite_poista', {id: aloite.id}) }}" class="btn btn-danger">Poista</button>
+            <a href="{{ path('aloite_muokkaa', {id: aloite.id}) }}" class="btn btn-success btn-sm">Muokkaa</a>
+            <button href="{{ path('aloite_poista', {id: aloite.id}) }}" class="btn btn-danger btn-sm">Poista</button>
         </td>
         </tr>               
     </tbody>    
