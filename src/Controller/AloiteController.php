@@ -120,21 +120,22 @@ class AloiteController extends AbstractController
          ]);
       }
 
-       /**
+      /**
      * @Route("/aloite/poista/{id}", name="aloite_poista")
      */
     public function poista(Request $request, $id){
 
-        // Luo linkki-olion ja palauttaa sen tiedoilla täytettynä.
-        $aloite = $this->getDoctrine()->getRepository(Aloitetaulu::class)->find($id);
-        
-          // Poistetaan linkki tietokannasta
-          $entityManager = $this->getDoctrine()->getManager();
-          $entityManager->remove($aloite);
-          $entityManager->flush();
-  
-          return $this->redirectToRoute('aloite_lista');
-  
-      }
+      // Luo aloite-olion ja palauttaa sen tiedoilla täytettynä.
+      $aloite = $this->getDoctrine()->getRepository(Aloitetaulu::class)->find($id);
+      
+        // Poistetaan linkki tietokannasta
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($aloite);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('aloite_lista');
+
+       //return $this->render('aloite/poista.html.twig');
+    }
 
 }
